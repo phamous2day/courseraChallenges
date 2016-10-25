@@ -1,22 +1,12 @@
-# from movie import Movie
-# from user import User
-#
-# user = User("Dave")
-# my_movie = Movie("The Martian", "Action", True)
-#
-# user.movies.append(my_movie)
-#
-#
-# print(user.watched_movies())
-
-# with open('my_file.txt', 'w') as f:
-#     print(f.readline())
-
 from user import User
+import json
 
 user = User("Dave")
 
-user.add_movie("The Martian", "action")
-user.add_movie("Zootopia", "animation")
+user.add_movie("The Martian", "Sci-fi")
+user.add_movie("Star Trek Beyond", "Action")
 
-user.save_to_file()
+print(user.json())
+
+with open('my_file.txt', 'w') as f:
+    json.dump(user.json(), f)
